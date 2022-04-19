@@ -1,3 +1,7 @@
 dist
 node_modules
 npm-debug.log
+*.md
+tsconfig.json
+dprint.json
+.gitignore
