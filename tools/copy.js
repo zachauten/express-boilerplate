@@ -1,11 +1,9 @@
 #! /usr/bin/env node
-
-// const fs = require("fs");
-const fs = require("fs/promises");
-const path = require("path")
+import fs from "fs/promises";
+import path from "path";
 
 async function copy(src, dst) {
-  let stats = await fs.stat(src);
+  const stats = await fs.stat(src);
   if (stats.isDirectory()) {
     await fs.mkdir(dst, { recursive: true });
     (await fs.readdir(src)).forEach((child) => {
