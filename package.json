@@ -5,17 +5,17 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "prebuild": "dprint fmt && tools/lint.js",
-    "build": "tsc && node tools/copy.js src/views dist/views",
+    "prebuild": "dprint fmt && denolint",
+    "build": "tsc && node tools/copy.js src/public dist/public",
     "start": "node ."
   },
   "dependencies": {
+    "@godaddy/terminus": "^4.10.2",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
-    "ejs": "^3.0.2",
     "express": "~4.16.0",
-    "morgan": "~1.9.0",
-    "pg": "^7.5.0"
+    "helmet": "^5.0.2",
+    "morgan": "~1.9.0"
   },
   "devDependencies": {
     "@node-rs/deno-lint": "^1.13.0",

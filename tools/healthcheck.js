@@ -3,7 +3,7 @@ import http from "http";
 http.get({
   host: "127.0.0.1",
   port: 8080,
-  path: "/health"
+  path: "/health",
 }, res => {
   const { statusCode } = res;
   if (statusCode !== 200) {
