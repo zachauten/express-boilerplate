@@ -1,6 +1,10 @@
 import http from "http";
 
-http.get("http://localhost:8080/health", res => {
+http.get({
+  host: "127.0.0.1",
+  port: 8080,
+  path: "/health"
+}, res => {
   const { statusCode } = res;
   if (statusCode !== 200) {
     res.resume();

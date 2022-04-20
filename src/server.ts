@@ -10,7 +10,7 @@ app.set("views", path.join(path.dirname(fileURLToPath(import.meta.url)), "views"
 app.set("view engine", "ejs");
 
 app.get("/", routes.index);
-app.get("/health", routes.health);
+app.get("api/health", routes.health);
 
 app.listen(port, () => {
   console.log(`server started at http://localhost:${port}`);
