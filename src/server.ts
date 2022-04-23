@@ -20,15 +20,18 @@ app.use(
   ),
 );
 
-app.get("/api/health", routes.health);
+app.get("/api/hello", routes.hello);
 
-const server = app.listen(port, () => {
+const server = app.listen({
+  hostname: "0.0.0.0",
+  port,
+}, () => {
   console.log(`server started at http://localhost:${port}`);
 });
 
 createTerminus(server, {
   signals: ["SIGTERM", "SIGINT"],
-  healthChecks: { "/health": async () => {} },
+  healthChecks: { "/api/health": async () => {} },
   onSignal: () => {
     console.log("starting shutdown...");
     return Promise.resolve();

@@ -1,13 +1,13 @@
 import express from "express";
 
-export function health(
+export function hello(
   _req: express.Request,
   res: express.Response,
   _next: express.NextFunction,
 ) {
-  res.sendStatus(200);
+  res.status(200).send("hello world!");
 }
 
 export default {
-  health,
+  hello,
 };
